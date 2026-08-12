@@ -68,6 +68,21 @@ Keep only:
 - Vote
 - Action Item
 
+## Selected Technology Stack
+- **Frontend:** React with TypeScript and Vite.
+- **Backend:** FastAPI with Pydantic for request and response validation.
+- **Database:** PostgreSQL, accessed through SQLAlchemy with Alembic migrations.
+- **Realtime:** FastAPI WebSockets, with Redis for cross-process event delivery.
+- **UI interactions:** `dnd-kit` for drag-and-drop topic grouping and TanStack Query for API data fetching and cache updates.
+- **Testing:** pytest for the backend, Vitest for frontend units, and Playwright for end-to-end flows.
+- **Deployment:** independently deploy the frontend and API, using managed PostgreSQL and Redis.
+
+### Architecture Notes
+- The frontend communicates with FastAPI through a versioned HTTP API and authenticated WebSocket connections.
+- The backend is the authorization boundary: it must not return unrevealed feedback or hidden vote totals to unauthorized members.
+- Members use opaque, revocable browser-session credentials rather than accounts or passwords.
+- Database transactions enforce vote limits and prevent duplicate votes during concurrent requests.
+
 ## Out of Scope
 Do not add these in the MVP:
 - AI features

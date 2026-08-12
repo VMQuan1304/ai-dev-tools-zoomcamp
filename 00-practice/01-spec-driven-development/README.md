@@ -2,6 +2,16 @@
 
 Initial scaffold for the retrospective-tool MVP. It contains a React + TypeScript frontend and a FastAPI backend; product features are intentionally not implemented yet.
 
+## Common commands
+
+Run `make help` to see the available shortcuts. The most common are:
+
+```bash
+make install
+make test
+make build
+```
+
 ## Frontend
 
 ```bash

@@ -1,5 +1,10 @@
 .PHONY: help install frontend-install backend-install frontend-dev backend-dev frontend-test backend-test test frontend-build build clean
 
+# Keep uv's cache inside the project so the Makefile also works in restricted
+# environments where a user-level cache directory is not writable.
+UV_CACHE_DIR ?= $(CURDIR)/.uv-cache
+export UV_CACHE_DIR
+
 help:
 	@echo "Available commands:"
 	@echo "  make install         Install frontend and backend dependencies"

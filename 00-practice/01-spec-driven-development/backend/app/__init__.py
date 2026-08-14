@@ -1,2 +1,0 @@
-"""Retrospective MVP API package."""
-
